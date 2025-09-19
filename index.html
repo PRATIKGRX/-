@@ -1,307 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Form</title>
-  </head>
-  <body>
-    <form action="https://script.google.com/macros/s/AKfycbwN-jAqelTAifmL6lkmvlJ53tKior6QgCVWQoSD5dCfZ0wABs6pzOzu9cetyVCzvDJr/exec" method="POST">
-      <header>
-        <h1 class="text-center text-4xl font-bold">Heading</h1>
-        <p class="text-center text-xl">Address</p>
-        <p class="text-center text-xl">ESTD:2054</p>
-        <div class="grid grid-cols-3">
-          <label for="sn">
-            <p>
-              S.N
-              <input
-                id="sn"
-                name="sn"
-                type="text"
-                class="outline-0 border-b-2 border-dotted"
-                required
-              />
-            </p>
-          </label>
-          <p class="text-center text-2xl underline">Form Name</p>
-          <label for="tdate">
-            <p>
-              Date :
-              <input
-                id="tdate"
-                name="tdate"
-                type="date"
-                class="outline-0 border-b-2 border-dotted"
-                required
-              />
-            </p>
-          </label>
-        </div>
-        <label for="Uname" class="flex">
-          <p>Name of the Person :</p>
-          <input
-            type="text"
-            id="Uname"
-            name="uname"
-            class="outline-0 border-b-2 border-dotted flex-1"
-            required
-          />
-        </label>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 300px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      cursor: pointer;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .success {
+      color: green;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
 
-        <div class="flex items-center gap-2">
-          <p class="m-0">Address :</p>
-          <div class="flex-1 grid grid-cols-[25%_35%_25%] gap-5">
-            <p class="flex gap-2 items-center m-0">
-              <label for="ranapa">Ra Na Pa:</label>
-              <input
-                type="text"
-                id="ranapa"
-                name="ranapa"
-                class="outline-0 border-b-2 border-dotted flex-1"
-                required
-              />
-            </p>
-            <p class="flex gap-2 items-center m-0">
-              <label for="tole">Tole:</label>
-              <input
-                type="text"
-                id="tole"
-                name="tole"
-                class="outline-0 border-b-2 border-dotted flex-1"
-                required
-              />
-            </p>
-            <p class="flex gap-2 items-center m-0">
-              <label for="cardno">Card No:</label>
-              <input
-                type="text"
-                id="cardno"
-                name="cardno"
-                class="outline-0 border-b-2 border-dotted flex-1"
-              />
-            </p>
-          </div>
-        </div>
-      </header>
+  <form id="myForm">
+    <h2>Submit Your Info</h2>
+    <input type="text" name="sn" placeholder="S.N" required>
+    <input type="text" name="uname" placeholder="User Name" required>
+    <button type="submit">Submit</button>
+    <div class="success" id="successMsg"></div>
+  </form>
 
-      <main>
-        <p class="font-bold">(A)Pariwarik Bibaran:</p>
-        <div>
-          <table class="w-full border-collapse border border-black">
-            <thead class="bg-gray-100">
-              <tr>
-                <th class="border border-black px-2 py-1 text-left">S.N</th>
-                <th class="border border-black px-2 py-1 text-left">Particular</th>
-                <th class="border border-black px-2 py-1 text-left">Gender</th>
-                <th class="border border-black px-2 py-1 text-left">Age</th>
-                <th class="border border-black px-2 py-1 text-left">Education Qualification</th>
-                <th class="border border-black px-2 py-1 text-left">Job</th>
-                <th class="border border-black px-2 py-1 text-left">Kaifiyata</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="border border-black px-2 py-1">1</td>
-                <td class="border border-black px-2 py-1">
-                  <input type="text" id="particular1" name="particular1" class="w-full outline-0" />
-                </td>
-                <td class="border border-black px-2 py-1">
-                  <select id="gender1" name="gender1" class="w-full">
-                    <option value="" selected disabled>Select Gender</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
-                  </select>
-                </td>
-                <td class="border border-black px-2 py-1">
-                  <input type="number" id="age1" name="age1" class="w-full outline-0" />
-                </td>
-                <td class="border border-black px-2 py-1">
-                  <input type="text" id="education1" name="education1" class="w-full outline-0" />
-                </td>
-                <td class="border border-black px-2 py-1">
-                  <input type="text" id="job1" name="job1" class="w-full outline-0" />
-                </td>
-                <td class="border border-black px-2 py-1">
-                  <input type="text" id="kaifiyata1" name="kaifiyata1" class="w-full outline-0" />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      <div class="grid grid-cols-2">
-        <label for="female_no" class="">
-          <p>
-            (B)Female No:
-            <input
-              type="number"
-              id="female_no"
-              name="female_no"
-              class="outline-0 border-b-2 border-dotted flex-1"
-            />
-          </p>
-        </label>
-        <label for="male_no" class="">
-          <p>
-            (B)Male No:
-            <input
-              type="number"
-              id="male_no"
-              name="male_no"
-              class="outline-0 border-b-2 border-dotted flex-1"
-            />
-          </p>
-        </label>
-      </div>
-      <div class="flex">
-        <p class="font-bold">(C)Pasu No:</p>
-        <div class="flex gap-2">
-          <p class="flex gap-3"><label for="cow">Cow</label> <input type="number" id="cow" name="cow" class="border w-10"></p>
-          <p class="flex gap-3"><label for="buff">Buff</label><input type="number" id="buff" name="buff" class="border w-10"></p>
-          <p class="flex gap-3"><label for="beda">Beda</label><input type="number" id="beda" name="beda" class="border w-10"></p>
-          <p class="flex gap-3"><label for="goat">Goat</label><input type="number" id="goat" name="goat" class="border w-10"></p>
-          <p class="flex gap-3"><label for="ox">Ox</label><input type="number" id="ox" name="ox" class="border w-10"></p>
-          <p class="flex gap-3"><label for="raga">Raga</label><input type="number" id="raga" name="raga" class="border w-10"></p>
-          <p class="flex gap-3"><label for="chicken">Chicken</label><input type="number" id="chicken" name="chicken" class="border w-10"></p>
-          <p class="flex gap-3"><label for="duck">Duck</label><input type="number" id="duck" name="duck" class="border w-10"></p>
-        </div>
-      </div>
-      <div class="flex">
-        <p class="font-bold">(D)Land:</p>
-        <div class="flex ">
-          <p><label for="bibagh">Bibagh</label> <input
-              type="text"
-              id="bibagh"
-              name="bibagh"
-              class="outline-0 border-b-2 border-dotted flex-1"
-            /></p>
-          <p><label for="katha">Katha</label> <input
-              type="text"
-              id="katha"
-              name="katha"
-              class="outline-0 border-b-2 border-dotted flex-1"
-            /></p>
-          <p><label for="dhur">Dhur</label> <input
-              type="text"
-              id="dhur"
-              name="dhur"
-              class="outline-0 border-b-2 border-dotted flex-1"
-            /></p>
-          <p><label for="dharma">Dharma</label> <input
-              type="text"
-              id="dharma"
-              name="dharma"
-              class="outline-0 border-b-2 border-dotted flex-1"
-            /></p>
-          <p><label for="jaat">Jaat</label> <input
-              type="text"
-              id="jaat"
-              name="jaat"
-              class="outline-0 border-b-2 border-dotted flex-1"
-            /></p>
-        </div>
-      </div>
-      <div>
-        <div class="flex gap-3">
-          <p class="font-bold">(E)Gover gas plant:</p> 
-          <label for="gover_yes">Yes</label><input id="gover_yes" type="radio" name="gover_gas_plant" value="yes">
-          <label for="gover_no">No</label><input type="radio" id="gover_no" name="gover_gas_plant" value="no">
-        </div>
-        <div>
-          <p><label for="sanstako_shayog">Bhayeko bhaye kun sanstako shayogbata nirman:</label><input
-              type="text"
-              id="sanstako_shayog"
-              name="sanstako_shayog"
-              class="outline-0 border-b-2 border-dotted flex-1"
-            /></p>
-          <p><label for="bhusey_chulo">1.Bhusey chulo wa daura</label><input
-              type="text"
-              id="bhusey_chulo"
-              name="bhusey_chulo"
-              class="outline-0 border-b-2 border-dotted flex-1"
-            /></p>
-          <p><label for="gas_cylinder">2.Gas Cylinder</label><input
-              type="text"
-              id="gas_cylinder"
-              name="gas_cylinder"
-              class="outline-0 border-b-2 border-dotted flex-1"
-            /></p>
-          <p><label for="sabari_sadhan">3.Ghar ma bhayeko sabari sadhan(car,scotty, or)</label><input
-              type="text"
-              id="sabari_sadhan"
-              name="sabari_sadhan"
-              class="outline-0 border-b-2 border-dotted flex-1"
-            /></p>
-        </div>
-      </div>
-      <p class="font-bold">(F) Ghar ma bhayeko samagri bibaran:</p>
-      <div class="flex gap-6">
-        <p class="flex gap-2"><label for="tv">TV</label><input type="number" id="tv" name="tv" class="border w-10"></p>
-        <p class="flex gap-2"><label for="radio">Radio</label><input type="number" id="radio" name="radio" class="border w-10"></p>
-        <p class="flex gap-2"><label for="refrigerator">Refrigerator</label><input type="number" id="refrigerator" name="refrigerator" class="border w-10"></p>
-        <p class="flex gap-2"><label for="computer">Computer</label><input type="number" id="computer" name="computer" class="border w-10"></p>
-        <p class="flex gap-2"><label for="internet">Internet</label><input type="number" id="internet" name="internet" class="border w-10"></p>
-        <p class="flex gap-2"><label for="ac">AC</label><input type="number" id="ac" name="ac" class="border w-10"></p>
-      </div>
-      <div class="flex">
-        1.Ghar ko kisim:
-        <div class="flex">
-          <p><label for="house_dhalan">Dhalan</label> <input type="radio" id="house_dhalan" name="house_type" value="dhalan"></p>
-          <p><label for="house_jasta">Jasta</label> <input type="radio" id="house_jasta" name="house_type" value="jasta"></p>
-          <p><label for="house_cement">Cement</label> <input type="radio" id="house_cement" name="house_type" value="cement"></p>
-          <p><label for="house_kacchi">Kacchi</label> <input type="radio" id="house_kacchi" name="house_type" value="kacchi"></p>
-        </div>
-      </div>
-      <div>2.Toilet: 
-        <label for="toilet_yes">Yes</label><input id="toilet_yes" type="radio" name="toilet" value="yes">
-        <label for="toilet_no">No</label><input type="radio" id="toilet_no" name="toilet" value="no">
-      </div>
-      <div class="flex gap-2">
-        (G)Employed: 
-        <div class="flex">
-          <p><label for="emp_sarkari">Sarkari</label> <input type="radio" id="emp_sarkari" name="employment" value="sarkari"></p>
-          <p><label for="emp_niji">Niji</label> <input type="radio" id="emp_niji" name="employment" value="niji"></p>
-          <p><label for="emp_foreign">Foreign</label> <input type="radio" id="emp_foreign" name="employment" value="foreign"></p>
-          <p><label for="emp_agriculture">Agriculture</label> <input type="radio" id="emp_agriculture" name="employment" value="agriculture"></p>
-          <p><label for="emp_beypar">Beypar</label> <input type="radio" id="emp_beypar" name="employment" value="beypar"></p>
-        </div>
-      </div>
-      <p>(H)Questions:</p>
-      <div>
-        <label for="community_benefits">1.Samudayak ban bata key key subida prapta garnu bhayeko cha?</label>
-        <textarea 
-          id="community_benefits" 
-          name="community_benefits" 
-          rows="3" 
-          class="w-full border p-2 mt-2"
-          placeholder="Please describe the benefits received from community forest..."
-        ></textarea>
-      </div>
-      
-      <div class="mt-4">
-        <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">
-          Submit Form
-        </button>
-      </div>
-    </main>
-    <footer class="mt-8">
-      <div class="grid grid-cols-3 gap-4">
-        <div class="text-center">
-          <p>Signature</p>
-          <div class="border-t-2 border-black mt-8"></div>
-        </div>
-        <div class="text-center">
-          <p>Signature</p>
-          <div class="border-t-2 border-black mt-8"></div>
-        </div>
-        <div class="text-center">
-          <p>Signature</p>
-          <div class="border-t-2 border-black mt-8"></div>
-        </div>
-      </div>
-    </footer>
-  </body>
-  <script src="script.js"></script>
+  <script>
+    const form = document.getElementById('myForm');
+    const successMsg = document.getElementById('successMsg');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const searchParams = new URLSearchParams();
+      for (const pair of formData) {
+        searchParams.append(pair[0], pair[1]);
+      }
+
+      // Replace this URL with your deployed Google Apps Script Web App URL
+      fetch('https://script.google.com/macros/s/AKfycbwN-jAqelTAifmL6lkmvlJ53tKior6QgCVWQoSD5dCfZ0wABs6pzOzu9cetyVCzvDJr/exec', {
+        method: 'POST',
+        body: searchParams
+      })
+      .then(response => response.text())
+      .then(data => {
+        successMsg.textContent = data; // Should show "Success"
+        form.reset();
+      })
+      .catch(error => {
+        successMsg.textContent = 'Error: ' + error;
+      });
+    });
+  </script>
+
+</body>
 </html>
