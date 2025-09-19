@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -46,7 +46,8 @@
   </style>
 </head>
 <body>
-<form action="https://script.google.com/macros/s/AKfycbwN-jAqelTAifmL6lkmvlJ53tKior6QgCVWQoSD5dCfZ0wABs6pzOzu9cetyVCzvDJr/exec" method="POST">
+
+  <form id="myForm">
     <h2>Submit Your Info</h2>
     <input type="text" name="sn" placeholder="S.N" required>
     <input type="text" name="uname" placeholder="User Name" required>
@@ -54,6 +55,35 @@
     <div class="success" id="successMsg"></div>
   </form>
 
-  
+  <script>
+    const form = document.getElementById('myForm');
+    const successMsg = document.getElementById('successMsg');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent page reload
+
+      const formData = new FormData(form);
+      const searchParams = new URLSearchParams();
+      for (const pair of formData) {
+        searchParams.append(pair[0], pair[1]);
+      }
+
+      // Replace with your deployed Apps Script URL
+      fetch('https://script.google.com/macros/s/AKfycbwN-jAqelTAifmL6lkmvlJ53tKior6QgCVWQoSD5dCfZ0wABs6pzOzu9cetyVCzvDJr/exec', {
+        method: 'POST',
+        body: searchParams,
+        mode: 'cors'
+      })
+      .then(response => response.text())
+      .then(data => {
+        successMsg.textContent = data; // Will show "Success"
+        form.reset(); // Clear form
+      })
+      .catch(error => {
+        successMsg.textContent = 'Error: ' + error;
+      });
+    });
+  </script>
+
 </body>
 </html>
