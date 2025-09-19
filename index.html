@@ -1,60 +1,280 @@
-
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Submit Form</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f0f0f0;
-    }
-    form {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      width: 300px;
-    }
-    input, button {
-      padding: 10px;
-      font-size: 16px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    button {
-      cursor: pointer;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-    }
-    button:hover {
-      background-color: #0056b3;
-    }
-    .success {
-      color: green;
-      font-weight: bold;
-      text-align: center;
-    }
-  </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Forest User Survey Form</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-<form action="https://script.google.com/macros/s/AKfycbwN-jAqelTAifmL6lkmvlJ53tKior6QgCVWQoSD5dCfZ0wABs6pzOzu9cetyVCzvDJr/exec" method="POST">
-    <h2>Submit Your Info</h2>
-    <input type="text" name="sn" placeholder="S.N" required>
-    <input type="text" name="uname" placeholder="User Name" required>
-    <button type="submit">Submit</button>
-    <div class="success" id="successMsg"></div>
-  </form>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #f9f9f9;
+      }
 
+      h2, h3, h4 {
+        margin-bottom: 10px;
+      }
 
-</body>
+      h2 {
+        text-align: center;
+        margin-bottom: 5px;
+      }
+
+      h3 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      p {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      form {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+
+      label {
+        display: inline-block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="date"],
+      input[type="number"],
+      select {
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        margin-left: 10px;
+      }
+
+      input[type="text"],
+      input[type="date"] {
+        width: 200px;
+      }
+
+      input[type="number"] {
+        width: 80px;
+      }
+
+      select {
+        width: 120px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+
+      th, td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: center;
+      }
+
+      th {
+        background-color: #f8f8f8;
+        font-weight: bold;
+      }
+
+      td input,
+      td select {
+        margin: 0;
+        width: 100%;
+        max-width: 150px;
+      }
+
+      h4 {
+        margin-top: 30px;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 5px;
+      }
+
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin: 0 5px 0 10px;
+      }
+
+      button {
+        background-color: #007cba;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-right: 10px;
+        margin-top: 20px;
+      }
+
+      button:hover {
+        background-color: #005a87;
+      }
+
+      button[type="reset"] {
+        background-color: #6c757d;
+      }
+
+      button[type="reset"]:hover {
+        background-color: #545b62;
+      }
+
+      /* Mobile responsiveness */
+      @media (max-width: 768px) {
+        body {
+          padding: 10px;
+        }
+
+        form {
+          padding: 20px;
+        }
+
+        input[type="text"],
+        input[type="date"] {
+          width: 150px;
+        }
+
+        label {
+          display: block;
+          margin-bottom: 5px;
+        }
+
+        table {
+          font-size: 14px;
+        }
+
+        th, td {
+          padding: 8px;
+        }
+
+        button {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        input[type="text"],
+        input[type="date"],
+        select {
+          width: 100%;
+          margin-left: 0;
+          margin-top: 5px;
+        }
+
+        input[type="number"] {
+          width: 60px;
+        }
+
+        table {
+          font-size: 12px;
+        }
+
+        th, td {
+          padding: 6px;
+        }
+
+        h2 {
+          font-size: 18px;
+        }
+
+        h3 {
+          font-size: 16px;
+        }
+
+        h4 {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Chitrasen Madhyawarti Community Forest Users Group</h2>
+    <p>Ratnanagar Municipality - 7, Manohara, Chitwan</p>
+    <h3>User Survey Form</h3>
+
+    <form action="https://script.google.com/macros/s/AKfycbz0pceLUrm6ljDLRk9ZwIUdZAny0O4eUd7YU-n8zcZH25vChRqKmD3tV5o1JDSOd1PVXg/exec" method="POST">
+      <label>Date: <input type="date" name="date" /></label><br /><br />
+      <label
+        >Head of Household: <input type="text" name="householdhead"
+      /></label>
+      <label>Card No: <input type="text" name="cardno" /></label><br /><br />
+
+      <h4>A) Family Details</h4>
+      <table border="1" cellpadding="5">
+        <tr>
+          <th>S.N.</th>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Age</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td><input type="text" name="fname" /></td>
+          <td>
+            <select name="fgender" id="">
+              <option value="" selected disabled>Select</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Others</option>
+            </select>
+          </td>
+          <td><input type="number" name="fage" /></td>
+        </tr>
+      </table>
+      <br />
+
+      <h4>B) Household Information</h4>
+      <p>
+        Number of Women: <input type="number" name="women" /> Number of Men:
+        <input type="number" name="men" />
+      </p>
+      <p>
+        House Type: Kachhi
+        <input type="radio" name="housetype" value="kachhi" /> Pakki
+        <input type="radio" name="housetype" value="pakki" />
+      </p>
+
+      <h4>C) Household Assets</h4>
+      <p>
+        Mobile <input type="number" name="mobile" /> Cycle
+        <input type="number" name="cycle" /> TV
+        <input type="number" name="tv" />
+      </p>
+
+      <h4>D) Source of Income</h4>
+      <p>
+        <input type="hidden" name="agriculture" value="no" />
+        Agriculture <input type="checkbox" name="agriculture" value="yes" />
+        <input type="hidden" name="business" value="no" />
+        Business <input type="checkbox" name="business" value="yes" />
+      </p>
+      <p>
+        Satisfied with services? Yes
+        <input type="radio" name="satisfied" value="yes" /> No
+        <input type="radio" name="satisfied" value="no" />
+      </p>
+
+      <br />
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </form>
+  </body>
 </html>
